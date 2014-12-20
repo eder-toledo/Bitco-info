@@ -49,7 +49,7 @@
         <div class="col s12">
             <div id="cardinicio" class="card grey lighten-5">
                 <div class="card-content">
-                    <p>Precio del Bitcoin el día de hoy.</p>
+                    <h5 class="titulo">Precio del Bitcoin el día de hoy.</h5>
                     <table>
                         <thead>
                         <tr>
@@ -61,6 +61,15 @@
                         <tbody>
                         </tbody>
                     </table>
+                    <hr>
+                    <h5 class="titulo">Convertir a otra moneda</h5>
+                    <select id="selectpaises">
+                    </select><br>
+                    <center>
+                        <button id="convertir" class="btn waves-effect waves-light teal">Convertir
+                            <i class="mdi-content-send right"></i>
+                        </button>
+                    </center>
                 </div>
             </div>
         </div>
@@ -73,7 +82,12 @@
             $(document).ready(function(){
                 $(".button-collapse").sideNav({menuWidth: 240, activationWidth: 70});
                 solicitarBitcoinactual();
+                solicitarDivisas();
                 window.setInterval("solicitarBitcoinactual()", 60000);
+                $("#convertir").click(function(){
+                    var currency=$("#selectpaises").val();
+                    solicitarconversion(currency);
+                })
             });
         </script>
     </body>

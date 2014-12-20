@@ -47,15 +47,48 @@
     </nav>
     <div class="row">
         <div class="col s12">
+            <div id="cardinicio" class="card grey lighten-5">
+                <div class="card-content">
+                    <p>Aqui podras observar el precio del bitcoin durante el año representado en dolares.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col"><a href="#test1">Tabla</a></li>
+                <li class="tab col"><a href="#test2">Grafica</a></li>
+            </ul>
+        </div>
+        <div id="test1" class="col s12">
+            <div class="card grey lighten-5">
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th data-field="id">Fecha</th>
+                        <th data-field="name">Precio promedio en USD</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="test2" class="col s12">
+            <div class="card grey lighten-5">
+                <div id="containergraf"></div>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 $(".button-collapse").sideNav({menuWidth: 240, activationWidth: 70});
+                $('ul.tabs').tabs();
+                solicitarAnioprecios();
             });
         </script>
     </body>

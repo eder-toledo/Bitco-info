@@ -18,47 +18,80 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <title>Bitco-info</title>
-    </head>
-    <body>
-    <nav>
-        <div class="nav-wrapper teal">
-            <div class="col s12">
-                <a href="#!" class="brand-logo right"><img id="logoapp" src="img/Bitcoin_logo_app_110x48.png"></a>
-                <a style="display: block !important;" class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-            </div>
-            <ul id="nav-mobile" class="right side-nav">
-                <li class="teal logomenu"><a href="#"><img id="logomenu" src="img/Bitcoin_logo_app_110x48.png"></a></li>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="anio.html">$ en este año</a></li>
-                <li><a href="historico.html">$ histórico</a></li>
-                <li><a href="acerca.html">Acerca de...</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="row">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>Bitco-info</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper teal">
         <div class="col s12">
-
+            <a href="#!" class="brand-logo right"><img id="logoapp" src="img/Bitcoin_logo_app_110x48.png"></a>
+            <a style="display: block !important;" class="button-collapse" href="#" data-activates="nav-mobile"><i
+                    class="mdi-navigation-menu"></i></a>
+        </div>
+        <ul id="nav-mobile" class="right side-nav">
+            <li class="teal logomenu"><a href="#"><img id="logomenu" src="img/Bitcoin_logo_app_110x48.png"></a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="anio.html">$ en este año</a></li>
+            <li><a href="historico.html">$ histórico</a></li>
+            <li><a href="acerca.html">Acerca de...</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="row">
+    <div class="col s12">
+        <div id="cardinicio" class="card grey lighten-5">
+            <div class="card-content">
+                <p>Aqui podras observar el precio del bitcoin en los ultmos 31 dias representado en dolares.</p>
+            </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $(".button-collapse").sideNav({menuWidth: 240, activationWidth: 70});
-                solicitarBitcoinactual();
-            });
-        </script>
-    </body>
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col"><a href="#test1">Tabla</a></li>
+            <li class="tab col"><a href="#test2">Grafica</a></li>
+        </ul>
+    </div>
+    <div id="test1" class="col s12">
+        <div class="card grey lighten-5">
+            <table class="striped">
+                <thead>
+                <tr>
+                    <th data-field="id">Fecha</th>
+                    <th data-field="name">Precio promedio en USD</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="test2" class="col s12">
+        <div class="card grey lighten-5">
+            <div id="containergraf"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".button-collapse").sideNav({menuWidth: 240, activationWidth: 70});
+        $('ul.tabs').tabs();
+        solicitarUltimosprecios();
+    });
+</script>
+</body>
 </html>
