@@ -18,46 +18,54 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <title>Bitco-info</title>
-    </head>
-    <body>
-    <nav>
-        <div class="nav-wrapper teal">
-            <div class="col s12">
-                <a href="#!" class="brand-logo right"><img id="logoapp" src="img/Bitcoin_logo_app_110x48.png"></a>
-                <a style="display: block !important;" class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-            </div>
-            <ul id="nav-mobile" class="right side-nav">
-                <li class="teal logomenu"><a href="#"><img id="logomenu" src="img/Bitcoin_logo_app_110x48.png"></a></li>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="ultimos.html">$ ultimos 31 días</a></li>
-                <li><a href="anio.html">$ en este año</a></li>
-                <li><a href="historico.html">$ histórico</a></li>
-                <li><a href="acerca.html">Acerca de...</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="row">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>Bitco-info</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper teal">
         <div class="col s12">
-
+            <a href="#!" class="brand-logo right"><img id="logoapp" src="img/Bitcoin_logo_app_110x48.png"></a>
+            <a style="display: block !important;" class="button-collapse" href="#" data-activates="nav-mobile"><i
+                    class="mdi-navigation-menu"></i></a>
         </div>
+        <ul id="nav-mobile" class="right side-nav">
+            <li class="teal logomenu"><a href="#"><img id="logomenu" src="img/Bitcoin_logo_app_110x48.png"></a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="ultimos.html">$ ultimos 31 días</a></li>
+            <li><a href="anio.html">$ en este año</a></li>
+            <li><a href="historico.html">$ histórico</a></li>
+            <li><a href="acerca.html">Acerca de...</a></li>
+        </ul>
     </div>
-    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $(".button-collapse").sideNav({menuWidth: 240, activationWidth: 70});
-            });
-        </script>
-    </body>
+</nav>
+<div class="row">
+    <div id="divRss" class="col s12">
+
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/FeedEk.js"></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".button-collapse").sideNav({menuWidth: 240, activationWidth: 70});
+        $('#divRss').FeedEk({
+            FeedUrl: 'http://cointelegraph.com/es/rss',
+            MaxCount: 10
+        });
+    });
+</script>
+</body>
 </html>

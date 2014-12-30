@@ -181,3 +181,9 @@ function creargraficaconzoom(x, y){
         });
     });
 }
+
+$(document).on('click', '.enlace a', function (event) {
+    event.preventDefault();
+    window.open($(this).attr('href'), '_system');
+    return false;
+});
